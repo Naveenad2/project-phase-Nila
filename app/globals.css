@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* The Nila Lime/Nature Palette */
+  --color-nila-50: #f7fee7;
+  --color-nila-100: #ecfccb;
+  --color-nila-200: #d9f99d;
+  --color-nila-300: #bef264;
+  --color-nila-400: #a3e635;
+  --color-nila-500: #84cc16; /* Brand Primary */
+  --color-nila-600: #65a30d;
+  --color-nila-800: #3f6212;
+  --color-nila-900: #1a2e05; /* Deep Forest Text */
+
+  --font-display: "Playfair Display", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-nila-900);
+  font-family: var(--font-body);
+  overflow-x: hidden;
 }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
+
+/* Hide Scrollbar */
+::-webkit-scrollbar { display: none; }
