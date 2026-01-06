@@ -292,7 +292,7 @@ function LoadingStep({ label, delay }: { label: string, delay: number }) {
       transition={{ delay }}
       className="flex items-center justify-center gap-3 text-brand-500 font-medium"
     >
-      <CheckCircle2 size={16} className="text-brand-900" />
+     
       <span>{label}</span>
     </motion.div>
   );
