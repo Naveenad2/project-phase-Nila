@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-
-const playfair = Playfair_Display({ 
-  subsets: ["latin"], 
-  variable: '--font-display',
-  display: 'swap' 
-});
+import Footer from "@/components/Footer"; // Import Footer
 
 const jakarta = Plus_Jakarta_Sans({ 
-  subsets: ["latin"], 
-  variable: '--font-body',
-  display: 'swap' 
+  subsets: ["latin"],
+  variable: "--font-body",
+  weight: ['400', '500', '600', '700', '800']
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-display",
 });
 
 export const metadata: Metadata = {
-  title: "NILA | School of Happiness",
-  description: "Kindling smiles across the globe. A sanctuary for emotional flourishing.",
+  title: "Professional Therapy Platform",
+  description: "Find the right support for you.",
 };
 
 export default function RootLayout({
@@ -26,10 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${jakarta.variable}`}>
-      <body className="bg-nila-50 antialiased selection:bg-nila-300 selection:text-nila-900">
+    <html lang="en">
+      <body className={`${jakarta.variable} ${playfair.variable} font-sans min-h-screen flex flex-col`}>
         <Navbar />
-        {children}
+        <div className="flex-grow">
+           {children}
+        </div>
+        <Footer /> {/* Added Footer Here */}
       </body>
     </html>
   );

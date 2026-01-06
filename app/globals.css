@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  /* The Nila Lime/Nature Palette */
-  --color-nila-50: #f7fee7;
-  --color-nila-100: #ecfccb;
-  --color-nila-200: #d9f99d;
-  --color-nila-300: #bef264;
-  --color-nila-400: #a3e635;
-  --color-nila-500: #84cc16; /* Brand Primary */
-  --color-nila-600: #65a30d;
-  --color-nila-800: #3f6212;
-  --color-nila-900: #1a2e05; /* Deep Forest Text */
+  --color-brand-50: #faf9f6;
+  --color-brand-100: #f5f0e6;
+  --color-brand-200: #e3d5c2;
+  --color-brand-300: #d1bfa0;
+  --color-brand-400: #bfa080;
+  --color-brand-500: #a68a64;
+  --color-brand-600: #8c7352;
+  --color-brand-700: #735d41;
+  --color-brand-800: #5c4a33;
+  --color-brand-900: #4a3b2a;
+  
+  --color-text-main: #2d241b;
+  --color-text-muted: #6b5d50;
 
   --font-display: "Playfair Display", serif;
   --font-body: "Plus Jakarta Sans", sans-serif;
-  
-  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 html {
@@ -23,14 +24,27 @@ html {
 }
 
 body {
-  color: var(--color-nila-900);
+  background-color: #fcfbf9;
+  color: var(--color-text-main);
   font-family: var(--font-body);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-body);
+  letter-spacing: -0.02em;
 }
 
-/* Hide Scrollbar */
-::-webkit-scrollbar { display: none; }
+.audio-wave-bar {
+  animation: wave 1s infinite ease-in-out;
+}
+
+@keyframes wave {
+  0%, 100% { height: 40%; }
+  50% { height: 100%; }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1bfa0; border-radius: 10px; }
